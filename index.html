@@ -18,7 +18,7 @@
       <!-- quizMetrics, a factory with data available for all controllers -->
       <div
         ng-controller = "listController as list"
-        ng-hide = "list.quizMetrics.quizActive">
+        ng-hide = "list.quizFactory.quizActive">
 
         <!-- search form and start button -->
 
@@ -106,7 +106,7 @@
       <!-- quiz -->
       <div
         ng-controller = "quizController as quiz"
-        ng-show = "quiz.quizMetrics.quizActive">
+        ng-show = "quiz.quizFactory.quizActive">
         <h1>Quiz</h1>
       </div>
     </div>
@@ -122,7 +122,9 @@
     <script src="app/app.js"></script>
     <script src="app/controllers/list.js"></script>
     <script src="app/controllers/quiz.js"></script>
-    <script src="app/factories/quizMetrics.js"></script>
+    <script src="app/factories/quizFactory.js"></script>
+    <script src="app/factories/questionsService.js"></script>
+
 
 
 

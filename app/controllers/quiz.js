@@ -4,11 +4,11 @@
     .module('QuizApp')
     .controller('quizController', quizFunc);
 
-    quizFunc.$inject = ['quizMetrics'];
+    quizFunc.$inject = ['quizFactory', 'questionsService'];
 
-    function quizFunc(quizMetricsData) {
+    function quizFunc(quizFactoryData, questionsService) {
 
-      this.quizMetrics = quizMetricsData;
+      this.quizFactory = quizFactoryData;
 
     }
 })();

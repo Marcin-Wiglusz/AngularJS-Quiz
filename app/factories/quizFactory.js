@@ -2,10 +2,10 @@
 
   angular
     .module('QuizApp')
-    .factory('quizMetrics', quizMetricsFunc);
+    .factory('quizFactory', quizFactoryFunc);
 
     // data from factories can be passed to different controllers as they can't comunnicate between each other
-    function quizMetricsFunc() {
+    function quizFactoryFunc() {
 
       var quizObject = {
         quizActive: false,
