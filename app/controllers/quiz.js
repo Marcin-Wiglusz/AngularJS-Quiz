@@ -6,9 +6,10 @@
 
     quizFunc.$inject = ['quizFactory', 'questionsService'];
 
-    function quizFunc(quizFactoryData, questionsService) {
+    function quizFunc(quizFactoryData, questionsServiceData) {
 
       this.quizFactory = quizFactoryData;
+      this.questionsService = questionsServiceData;
 
     }
 })();

@@ -107,7 +107,47 @@
       <div
         ng-controller = "quizController as quiz"
         ng-show = "quiz.quizFactory.quizActive">
-        <h1>Quiz</h1>
+        <div class = "row">
+          <div class = "col-xs-8">
+            <h2>Progress:</h2>
+
+            <!-- Progress buttons -->
+
+            <div class = "btn-toolbar">
+              <!-- quiz = controller alias, questionsService = var in quizController with value of questionsServiceData as argument, injected from questionsService factory (as returned dataObject), quizQuestions = arr of questions in quiz factory  -->
+              <button
+                class = "btn"
+                ng-repeat = "question in quiz.questionsService.quizQuestions"
+                ng-class = "{'btn-info': question.selected !== null, 'btn-danger': question.selected === null}">
+                <!-- ng-class accepts object with name: value pair  -->
+                <!-- question is each object from quizQuestions arr, each question has selected property and if it's equal or not to null, button gets info/danger class  -->
+                <span
+                  class = "glyphicon"
+                  ng-class = "{'glyphicon-pencil': question.selected !== null, 'glyphicon-question-sign': question.selected === null}"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Legend -->
+
+          <div class = "col-xs-4">
+            <div class = "row">
+              <h4>Legend:</h4>
+              <div class = "col-sm-4">
+                <button class = "btn btn-danger">
+                  <span class = "glyphicon glyphicon-question-sign"></span>
+                </button>
+                <p>Unanswered</p>
+              </div>
+              <div class = "col-sm-4">
+                <button class = "btn btn-info">
+                  <span class = "glyphicon glyphicon-pencil"></span>
+                </button>
+                <p>Answered</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
