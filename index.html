@@ -14,12 +14,12 @@
       <!-- instead of $scope in controller give controller an alias and then use it ('this' is needed to bind variable with controller) -->
       <div ng-controller = "listController as list">
         <div class = "row">
-          <!-- for every ruler in data in listController -->
+          <!-- loop over for every ruler in data in listController -->
           <div class = "col-sm-6" ng-repeat = "ruler in list.data">
             <div class = "well well-sm">
               <div class = "row">
                 <div class = "col-md-6">
-                  <img class = "img-rounded img-responsive" ng-src = "{{ ruler.thumb }}" />
+                  <img class = "img-rounded img-responsive list-img" ng-src = "{{ ruler.thumb }}" />
                 </div>
                 <div class = "col-md-6">
                   <h4>{{ ruler.type }}</h4>
@@ -27,17 +27,61 @@
                   <p><strong>Size: </strong>{{ruler.size}}</p>
                   <p><strong>Average Lifespan: </strong>{{ruler.lifespan}}</p>
                   <p><strong>Diet: </strong>{{ruler.diet}}</p>
-                  <button class = "btn btn-primary pull-right">More Info</button>
+                  <!-- bootstrap modal for pop up info (data attr)-->
+                  <button
+                    class = "btn btn-primary pull-right"
+                    data-toggle = "modal"
+                    data-target = "#ruler-info"
+                    ng-click = "list.toggleRulerInfo(ruler)">More Info
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <div class = "modal" id = "ruler-info">
+            <div class = "modal-dialog">
+              <div class = "modal-content">
+                <div class = "modal-header">
+                  <h2>{{ list.activeRuler.type }}</h2>
+                </div>
+                <div class = "modal-body">
+                  <div class = "row">
+                    <div class = "col-xs-8 col-xs-offset-2">
+                      <img
+                        class = "img-rounded img-responsive"
+                        ng-src = "{{list.activeRuler.thumb}}" />
+                    </div>
+                  </div>
+                  <div class = "row">
+                    <div class = "col-md-6">
+                      <p><strong>Locations: </strong>{{list.activeRuler.locations}}</p>
+                      <p><strong>Size: </strong>{{list.activeRuler.size}}</p>
+                      <p><strong>Average Lifespan: </strong>{{list.activeRuler.lifespan}}</p>
+                      <p><strong>Diet: </strong>{{list.activeRuler.diet}}</p>
+                    </div>
+                    <div class = "col-xs-12">
+                      <p>{{ list.activeRuler.description }}</p>
+                      <button
+                        class = "btn btn-danger pull-right"
+                        data-dismiss = "modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
       </div>
     </div>
 
     <script src="node_modules/angular/angular.min.js"></script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <!-- has to be before bootstrap.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- bootstrap.js for modal, requires jQuery -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
     <!-- application scripts -->
     <script src="app/app.js"></script>

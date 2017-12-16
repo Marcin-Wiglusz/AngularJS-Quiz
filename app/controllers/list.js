@@ -9,6 +9,12 @@
     function listFunc() {
 
       this.data = quizData;
+      this.activeRuler = {};
+
+      this.toggleRulerInfo = function toggleRulerInfo(index) {
+
+        this.activeRuler = index;
+      }
     }
 
 })();

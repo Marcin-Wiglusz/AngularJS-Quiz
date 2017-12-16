@@ -1,1 +1,6 @@
 @import 'normalize.css';
+
+.list-img {
+  /*width: 100%;*/
+  height: 150px;
+}
