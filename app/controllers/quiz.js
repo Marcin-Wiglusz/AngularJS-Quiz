@@ -10,6 +10,13 @@
 
       this.quizFactory = quizFactoryData;
       this.questionsService = questionsServiceData;
+      this.activeQuestion = 0;
+
+
+      this.questionAnswered = function questionAnswered() {
+
+        
+      }
 
     }
 })();
