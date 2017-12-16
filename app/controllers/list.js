@@ -6,16 +6,30 @@
     .module('QuizApp')
     .controller('listController', listFunc);
 
-    function listFunc() {
+    // injecting quizMetrics.js data to listController
+    listFunc.$inject = ['quizMetrics'];
+
+    function listFunc(quizMetricsData) {
 
       this.data = quizData;
       this.activeRuler = {};
+
       // typing will change value on controller
       this.search = "";
 
-      this.toggleRulerInfo = function toggleRulerInfo(index) {
+      // quizObject is passed from quizMetrics.js under an argument and set as quizMetrics value. Access to quizActive is possible
+      this.quizMetrics = quizMetricsData;
 
+
+      this.toggleRulerInfo = function toggleRulerInfo(index) {
         this.activeRuler = index;
+      }
+
+
+      this.activateQuiz = function activateQuiz() {
+        // changeState from factory (quizMetrics passed as listFunc argument)
+        //by default quizActive is false (for ng-hide). Calling changeState with 'true' as argument, sets quizObject.quizActive to true and hides list
+        quizMetricsData.changeState(true);
       }
     }
 
