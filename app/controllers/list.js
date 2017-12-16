@@ -10,6 +10,8 @@
 
       this.data = quizData;
       this.activeRuler = {};
+      // typing will change value on controller
+      this.search = "";
 
       this.toggleRulerInfo = function toggleRulerInfo(index) {
 

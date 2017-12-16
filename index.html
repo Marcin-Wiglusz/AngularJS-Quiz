@@ -13,9 +13,20 @@
       <h3>Test</h3>
       <!-- instead of $scope in controller give controller an alias and then use it ('this' is needed to bind variable with controller) -->
       <div ng-controller = "listController as list">
+        <form class = "form-inline well well-sm clearfix">
+          <span class = "glyphicon glyphicon-search"></span>
+          <input
+            type = "text"
+            placeholder = "Search any term"
+            class = "form-control"
+            ng-model = "list.search"
+        </form>
         <div class = "row">
           <!-- loop over for every ruler in data in listController -->
-          <div class = "col-sm-6" ng-repeat = "ruler in list.data">
+          <!-- filter by search value from list controller  -->
+          <div
+            class = "col-sm-6"
+            ng-repeat = "ruler in list.data | filter: list.search">
             <div class = "well well-sm">
               <div class = "row">
                 <div class = "col-md-6">
