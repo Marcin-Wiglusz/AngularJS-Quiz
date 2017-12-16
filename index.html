@@ -9,14 +9,35 @@
     <link rel="stylesheet" href="styles/css/main.css">
 </head>
   <body>
-    <div class="container">
+    <div class = "container">
       <h3>Test</h3>
-      <div ng-controller = 'listController'>
-        {{2*4}}
+      <!-- instead of $scope in controller give controller an alias and then use it ('this' is needed to bind variable with controller) -->
+      <div ng-controller = "listController as list">
+        <div class = "row">
+          <!-- for every ruler in data in listController -->
+          <div class = "col-sm-6" ng-repeat = "ruler in list.data">
+            <div class = "well well-sm">
+              <div class = "row">
+                <div class = "col-md-6">
+                  <img class = "img-rounded img-responsive" ng-src = "{{ ruler.thumb }}" />
+                </div>
+                <div class = "col-md-6">
+                  <h4>{{ ruler.type }}</h4>
+                  <p><strong>Locations: </strong>{{ruler.locations}}</p>
+                  <p><strong>Size: </strong>{{ruler.size}}</p>
+                  <p><strong>Average Lifespan: </strong>{{ruler.lifespan}}</p>
+                  <p><strong>Diet: </strong>{{ruler.diet}}</p>
+                  <button class = "btn btn-primary pull-right">More Info</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <script src="node_modules/angular/angular.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 
     <!-- application scripts -->
     <script src="app/app.js"></script>
