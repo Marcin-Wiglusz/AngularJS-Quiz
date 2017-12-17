@@ -22,11 +22,13 @@
 
 
       this.toggleRulerInfo = function toggleRulerInfo(index) {
+        console.log('hhh');
         this.activeRuler = index;
       }
 
 
       this.activateQuiz = function activateQuiz() {
+        console.log('gggg');
         // changeState from factory (quizMetrics passed as listFunc argument)
         //by default quizActive is false (for ng-hide). Calling changeState with 'true' as argument, sets quizObject.quizActive to true and hides list
         quizFactoryData.changeState(true);

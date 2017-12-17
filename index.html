@@ -14,7 +14,7 @@
       <h3>Mad Rulers Quiz</h3>
       <!-- instead of $scope in controller give controller an alias and then use it ('this' is needed to bind variable with controller) -->
 
-      <!-- replace ng-hide with redirection to quiz url -->
+      <!-- replace ng-hide with redirection to quiz url? -->
       <!-- quizMetrics, a factory with data available for all controllers -->
       <div
         ng-controller = "listController as list"
@@ -164,11 +164,11 @@
                     <h4 class = "answer">{{answer.answer}}</h4>
                   </div>
                 </div>
-              </div>  
+              </div>
             </div>
             <button
               class = "btn btn-warning"
-              ng-clic = "questionAnswered()">Continue
+              ng-click = "quiz.questionAnswered()">Continue
             </button>
           </div>
 
