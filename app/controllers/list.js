@@ -22,7 +22,6 @@
 
 
       this.toggleRulerInfo = function toggleRulerInfo(index) {
-        console.log('hhh');
         this.activeRuler = index;
       }
 

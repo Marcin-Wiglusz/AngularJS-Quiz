@@ -31,7 +31,8 @@
             ng-model = "list.search" />
           <button
             class = "btn btn-warning pull-right "
-            ng-click = "list.activateQuiz()">Start Quiz</button>
+            ng-click = "list.activateQuiz()">Start Quiz
+          </button>
         </form>
 
         <!-- rulers list  -->
@@ -157,23 +158,45 @@
             <div class = "row">
               <div class = "col-xs-12">
                 <h4>{{quiz.activeQuestion + 1 + ". " + quiz.questionsService.quizQuestions[quiz.activeQuestion].text}}</h4>
-                <div class = "row">
+
+                <!-- text answers -->
+                <div
+                  class = "row"
+                  ng-if="quiz.questionsService.quizQuestions[quiz.activeQuestion].type === 'text'">
                   <div
                     class = "col-sm-6"
                     ng-repeat = "answer in quiz.questionsService.quizQuestions[quiz.activeQuestion].possibilities">
                     <h4 class = "answer">{{answer.answer}}</h4>
                   </div>
                 </div>
+
+                <!-- img answers -->
+                <div
+                  class = "row"
+                  ng-if="quiz.questionsService.quizQuestions[quiz.activeQuestion].type === 'image'">
+                  <div
+                    class = "col-sm-6"
+                    ng-repeat = "answer in quiz.questionsService.quizQuestions[quiz.activeQuestion].possibilities">
+                    <div class = "img-answer">
+                      <img ng-src = "{{answer.answer}}"
+                    </div>
+                  </div>
+                </div>
+
+
+
               </div>
+              <button
+                class = "btn btn-warning"
+                ng-click = "quiz.questionAnswered()">Continue
+              </button>
+
             </div>
-            <button
-              class = "btn btn-warning"
-              ng-click = "quiz.questionAnswered()">Continue
-            </button>
+
+
           </div>
+        </div> <!-- questions section -->
 
-
-        </div>
       </div>
     </div>
 
