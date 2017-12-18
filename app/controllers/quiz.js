@@ -15,20 +15,34 @@
 
       var numberOfAnswers = 0;
 
+      //index is given from ng-click($index)
+      this.setActiveQuestion = function setActiveQuestion(index) {
 
-      this.setActiveQuestion = function setActiveQuestion() {
-        var breakout = false;
-        // quizLenght will be referencing activeQuestion są (index of last question will always be 1 less than lenght of array)
-        var quizLenght = questionsServiceData.quizQuestions.length - 1;
-        //while loop is searching for unanswered question while breakout is false
-        while (!breakout) {
-          // ... = checks if activeQuestion i less than lenght (if so/not ...)
-          this.activeQuestion = this.activeQuestion < quizLenght?++this.activeQuestion: 0;
-          //if current question is not answered, set breakout to true to break the loop
-          if (questionsServiceData.quizQuestions[this.activeQuestion].selected === null) {
-            breakout = true;
+        // there was no click, so with index as undefined while loop is seeking next unanswered question
+        if (index === undefined) {
+
+          // quizLenght will be referencing activeQuestion są (index of last question will always be 1 less than lenght of array)
+          var quizLenght = questionsServiceData.quizQuestions.length - 1;
+          var breakout = false;
+
+          //while loop is searching for unanswered question while breakout is false
+          while (!breakout) {
+
+            // ... = checks if activeQuestion i less than lenght (if so/not ...)
+            this.activeQuestion = this.activeQuestion < quizLenght?++this.activeQuestion: 0;
+
+            //if current question is not answered, set breakout to true to break the loop
+            if (questionsServiceData.quizQuestions[this.activeQuestion].selected === null) {
+              breakout = true;
+            }
           }
         }
+        // here's all the jumping between the questions
+        else {
+          this.activeQuestion = index;
+        }
+
+
       }
 
 

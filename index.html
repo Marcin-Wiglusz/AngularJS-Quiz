@@ -119,7 +119,8 @@
               <button
                 class = "btn"
                 ng-repeat = "question in quiz.questionsService.quizQuestions"
-                ng-class = "{'btn-info': question.selected !== null, 'btn-danger': question.selected === null}">
+                ng-class = "{'btn-info': question.selected !== null, 'btn-danger': question.selected === null}"
+                ng-click = "quiz.setActiveQuestion($index)">
                 <!-- ng-class accepts object with name: value pair  -->
                 <!-- question is each object from quizQuestions arr, each question has selected property and if it's equal or not to null, button gets info/danger class  -->
                 <span
@@ -181,7 +182,10 @@
                   <div
                     class = "col-sm-6"
                     ng-repeat = "answer in quiz.questionsService.quizQuestions[quiz.activeQuestion].possibilities">
-                    <div class = "img-answer">
+                    <div
+                      class = "img-answer"
+                      ng-class = "{'img-selected': $index === quiz.questionsService.quizQuestions[quiz.activeQuestion].selected}"
+                      ng-click = "quiz.selectAnswer($index)">
                       <img ng-src = "{{answer.answer}}"
                     </div>
                   </div>
