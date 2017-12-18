@@ -8,10 +8,14 @@
 
       var dataObject = {
         quizData: quizData,
-        quizQuestions: quizQuestions
+        quizQuestions: quizQuestions,
+        correctAnswers: correctAnswers
       }
       return dataObject;
     }
+
+    //need to get that to quizQuestions
+    var correctAnswers = [1, 2, 3, 0, 2, 0, 3, 2, 0, 3];
 
     var quizQuestions  = [
         {

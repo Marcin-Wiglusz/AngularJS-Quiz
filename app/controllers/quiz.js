@@ -93,8 +93,9 @@
         numberOfAnswers = 0;
         this.activeQuestion = 0;
         //same as above, false becase you don't want to display Quiz after you finish. true is only on 'Start' button
-        quizFactory.changeState("quiz", false);
-        quizFactory.changeState("results", true);
+        quizFactoryData.changeState("quiz", false);
+        quizFactoryData.changeState("results", true);
+        quizFactoryData.checkAnswers();
       }
 
     }
