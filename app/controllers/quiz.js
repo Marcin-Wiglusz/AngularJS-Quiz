@@ -46,5 +46,11 @@
 
         this.setActiveQuestion();
       }
+
+      this.selectAnswer = function selectAnswer(index) {
+        questionsServiceData.quizQuestions[this.activeQuestion].selected = index;
+      }
+
     }
+
 })();

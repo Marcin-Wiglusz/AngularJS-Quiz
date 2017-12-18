@@ -166,7 +166,11 @@
                   <div
                     class = "col-sm-6"
                     ng-repeat = "answer in quiz.questionsService.quizQuestions[quiz.activeQuestion].possibilities">
-                    <h4 class = "answer">{{answer.answer}}</h4>
+                    <!-- $index is specific for ng-repeat. It will give an index number of current iteration (index of ng-repeat) -->
+                    <h4
+                      class = "answer"
+                      ng-class = "{'bg-info': $index === quiz.questionsService.quizQuestions[quiz.activeQuestion].selected}"
+                      ng-click = "quiz.selectAnswer($index)">{{answer.answer}}</h4>
                   </div>
                 </div>
 
@@ -195,7 +199,7 @@
 
 
           </div>
-        </div> <!-- questions section -->
+        </div> <!-- end of questions section -->
 
       </div>
     </div>
