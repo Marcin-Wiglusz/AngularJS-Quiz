@@ -8,10 +8,23 @@
     function quizFactoryFunc() {
 
       var quizObject = {
+        //for quiz page
         quizActive: false,
-        changeState: function(state) {
-
-          quizObject.quizActive = state;
+        //for result page
+        resultsActive: false,
+        changeState: function(show, state) {
+          //display quiz
+          if (show === "quiz") {
+            // in activateQuiz (listCtrl) changeState("quiz", true) changes quizActive
+            quizObject.quizActive = state;
+          }
+          //display results page
+          else if (show === "results") {
+            quizObject.resultsActive = state;
+          }
+          else {
+            return false;
+          }
         }
       };
       return quizObject;

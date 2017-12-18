@@ -151,11 +151,29 @@
           </div>
         </div>
 
-        <!-- Question -->
+        <!-- Question ----------------------------------------------------------------->
 
-        <div class = "row">
+        <div
+          class = "row">
+
+          <!-- quiz unfinished alert ------------------------------------->
+
+          <!-- by default error is false, button appears only after activeQuestion resets to 0 -->
+          <div
+            class = "alert alert-danger"
+            ng-show = "quiz.error">
+            Please answer all questions!
+            <button
+              class = "close"
+              ng-click = "quiz.error = false">x
+            </button>
+          </div>
+
+
           <h3>Question:</h3>
-          <div class = "well well-sm">
+          <div
+            class = "well well-sm"
+            ng-hide = "quiz.endQuiz">
             <div class = "row">
               <div class = "col-xs-12">
                 <h4>{{quiz.activeQuestion + 1 + ". " + quiz.questionsService.quizQuestions[quiz.activeQuestion].text}}</h4>
@@ -186,26 +204,40 @@
                       class = "img-answer"
                       ng-class = "{'img-selected': $index === quiz.questionsService.quizQuestions[quiz.activeQuestion].selected}"
                       ng-click = "quiz.selectAnswer($index)">
-                      <img ng-src = "{{answer.answer}}"
+                      <img ng-src = "{{answer.answer}}" />
                     </div>
                   </div>
                 </div>
 
-
-
+                <button
+                  class = "btn btn-warning"
+                  ng-click = "quiz.questionAnswered()">Continue
+                </button>
               </div>
-              <button
-                class = "btn btn-warning"
-                ng-click = "quiz.questionAnswered()">Continue
-              </button>
-
+            <!-- </div> -->
             </div>
-
-
           </div>
-        </div> <!-- end of questions section -->
 
-      </div>
+          <!-- end quiz prompt -->
+
+          <div
+            class = "well well-sm"
+            ng-show = "quiz.endQuiz">
+            <div class = "row">
+              <div class = "col-xs-12">
+                <h3>Are you sure you want to submit your answers?</h3>
+                <button
+                  class = "btn btn-success"
+                  ng-click = "quiz.quizSummary()">Yes</button>
+                <button
+                  class = "btn btn-danger"
+                  ng-click = "quiz.endQuiz = false">No</button>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- end of questions section -->
+      </div> <!-- end of quiz section -->
     </div>
 
     <script src="node_modules/angular/angular.min.js"></script>
@@ -221,9 +253,5 @@
     <script src="app/controllers/quiz.js"></script>
     <script src="app/factories/quizFactory.js"></script>
     <script src="app/factories/questionsService.js"></script>
-
-
-
-
   </body>
 </html>

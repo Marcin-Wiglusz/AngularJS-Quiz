@@ -11,6 +11,8 @@
       this.quizFactory = quizFactoryData;
       this.questionsService = questionsServiceData;
       this.activeQuestion = 0;
+      this.error = false;
+      this.endQuiz = false;
       // this.setActiveQuestion = setActiveQuestion;
 
       var numberOfAnswers = 0;
@@ -31,6 +33,10 @@
             // ... = checks if activeQuestion i less than lenght (if so/not ...)
             this.activeQuestion = this.activeQuestion < quizLenght?++this.activeQuestion: 0;
 
+            // if activeQuestion is reseted to 0 (not at the start of quiz but whit above line)
+            if (this.activeQuestion === 0) {
+              this.error = true
+            }
             //if current question is not answered, set breakout to true to break the loop
             if (questionsServiceData.quizQuestions[this.activeQuestion].selected === null) {
               breakout = true;
@@ -47,22 +53,48 @@
 
 
       this.questionAnswered = function questionAnswered() {
-        console.log('asdasd');
         var quizLenght = questionsServiceData.quizQuestions.length;
 
         if (questionsServiceData.quizQuestions[this.activeQuestion].selected !== null) {
           numberOfAnswers++;
+          console.log(numberOfAnswers);
 
           if (numberOfAnswers >= quizLenght) {
-            //then end quiz
+
+            for (var i = 0; i < quizLenght; i++) {
+              //loop through questions
+              if (questionsServiceData.quizQuestions[i].selected === null) {
+                //and if there is any unanswered question, then jump to it
+                this.setActiveQuestion(i);
+                //end end loop as index to unanswered question is given
+                return;
+              }
+            }
+            //
+            this.error = false;
+            // do if loop wasn't executed and all answers were answered:
+            this.endQuiz = true;
+            // and exit function to avoid executing this.setActiveQuestion();
+            console.log(this.endQuiz);
+            return;
           }
         }
-
         this.setActiveQuestion();
       }
 
       this.selectAnswer = function selectAnswer(index) {
+        // here selected stops beeing null
         questionsServiceData.quizQuestions[this.activeQuestion].selected = index;
+      }
+
+      this.quizSummary = function quizSummary() {
+        //reset for new Quiz
+        this.endQuiz = false;
+        numberOfAnswers = 0;
+        this.activeQuestion = 0;
+        //same as above, false becase you don't want to display Quiz after you finish. true is only on 'Start' button
+        quizFactory.changeState("quiz", false);
+        quizFactory.changeState("results", true);
       }
 
     }
