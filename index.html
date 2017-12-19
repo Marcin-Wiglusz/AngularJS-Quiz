@@ -251,6 +251,7 @@
                 ng-repeat = "qIcons in results.questionsService.quizQuestions"
                 ng-class = "{'btn-success': qIcons.correct, 'btn-danger': !qIcons.correct}"
                 ng-click = "results.setActiveQuestion($index)">
+                <!-- one line up - jump between answered questions -->
                 <span
                   class = "glyphicon"
                   ng-class="{'glyphicon-ok': qIcons.correct, 'glyphicon-remove': !qIcons.correct}">
@@ -281,6 +282,15 @@
         </div>
 
         <!-- score and % -->
+
+        <div class = "row">
+          <div class = "col-xs-12">
+            <h2>You've scored {{results.quizFactory.sumOfCorrAnswers}} / {{results.questionsService.quizQuestions.length}}</h2>
+            <!-- filter result up to 2 places -->
+            <h2><strong>{{results.endScorePerc() | number:2}}%</strong></h2>
+          </div>
+        </div>
+
         <div class = "row">
           <h3>Questions:</h3>
           <div class = "well well-sm">
@@ -293,8 +303,7 @@
                     ng-repeat = "answer in results.questionsService.quizQuestions[results.activeQuestion].possibilities">
                     <h4
                       class = "answer"
-                      ng-class = "{'bg-success': $index === results.quizFactory.correctAnswers[results.activeQuestion],
-                                   'bg-danger': $index === results.questionsService.quizQuestions[results.activeQuestion].selected}">
+                      ng-class = "results.getAnswerClass($index)">
                       <p
                         class = "pull-right"
                         ng-show = "$index !== results.quizFactory.correctAnswers[results.activeQuestion] && $index === results.questionsService.quizQuestions[results.activeQuestion].selected">Your Answer</p>
