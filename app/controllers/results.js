@@ -31,6 +31,16 @@
 
         return quizFactoryData.sumOfCorrAnswers / questionsServiceData.quizQuestions.length * 100;
       }
+
+      this.reset = function reset() {
+        quizFactoryData.changeState("results", false);
+        quizFactoryData.sumOfCorrAnswers = 0;
+
+        for (var i = 0; i < questionsServiceData.quizQuestions.length; i++) {
+          questionsServiceData.quizQuestions[i].selected = null;
+          questionsServiceData.quizQuestions[i].correct = null;          
+        }
+      }
     }
 
 })();
