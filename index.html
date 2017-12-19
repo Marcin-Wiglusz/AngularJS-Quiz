@@ -18,7 +18,7 @@
       <!-- quizMetrics, a factory with data available for all controllers -->
       <div
         ng-controller = "listController as list"
-        ng-hide = "list.quizFactory.quizActive">
+        ng-hide = "list.quizFactory.quizActive || list.quizFactory.resultsActive">
 
         <!-- search form and start button -->
 
@@ -238,6 +238,81 @@
 
         </div> <!-- end of questions section -->
       </div> <!-- end of quiz section -->
+
+      <div
+        ng-controller = "resultsController as results"
+        ng-show = "results.quizFactory.resultsActive">
+        <div class = "row">
+          <div class = "col-xs-8">
+            <h2>Results:</h2>
+            <div class = "btn-toolbar">
+              <button
+                class = "btn"
+                ng-repeat = "qIcons in results.questionsService.quizQuestions"
+                ng-class = "{'btn-success': qIcons.correct, 'btn-danger': !qIcons.correct}"
+                ng-click = "results.setActiveQuestion($index)">
+                <span
+                  class = "glyphicon"
+                  ng-class="{'glyphicon-ok': qIcons.correct, 'glyphicon-remove': !qIcons.correct}">
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Legend in result page -->
+
+          <div class = "col-xs-4">
+            <div class = "row">
+              <h4>Legend:</h4>
+              <div class = "col-sm-4">
+                <button class = "btn btn-success">
+                  <span class = "glyphicon glyphicon-ok"></span>
+                </button>
+                <p>Correct</p>
+              </div>
+              <div class = "col-sm-4">
+                <button class = "btn btn-danger">
+                  <span class = "glyphicon glyphicon-remove"></span>
+                </button>
+                <p>Incorrect</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- score and % -->
+        <div class = "row">
+          <h3>Questions:</h3>
+          <div class = "well well-sm">
+            <div class = "row">
+              <div class = "col-xs-12">
+                <h4>{{results.activeQuestion + 1 + ". " + results.questionsService.quizQuestions[results.activeQuestion].text}}</h4>
+                <div class = "row">
+                  <div
+                    class = "col-sm-6"
+                    ng-repeat = "answer in results.questionsService.quizQuestions[results.activeQuestion].possibilities">
+                    <h4
+                      class = "answer"
+                      ng-class = "{'bg-success': $index === results.quizFactory.correctAnswers[results.activeQuestion],
+                                   'bg-danger': $index === results.questionsService.quizQuestions[results.activeQuestion].selected}">
+                      <p
+                        class = "pull-right"
+                        ng-show = "$index !== results.quizFactory.correctAnswers[results.activeQuestion] && $index === results.questionsService.quizQuestions[results.activeQuestion].selected">Your Answer</p>
+                      <p
+                        class = "pull-right"
+                        ng-show = "$index === results.quizFactory.correctAnswers[results.activeQuestion]">Correct Answer</p>
+                        {{answer.answer}}
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
     </div>
 
     <script src="node_modules/angular/angular.min.js"></script>
@@ -251,6 +326,7 @@
     <script src="app/app.js"></script>
     <script src="app/controllers/list.js"></script>
     <script src="app/controllers/quiz.js"></script>
+    <script src="app/controllers/results.js"></script>
     <script src="app/factories/quizFactory.js"></script>
     <script src="app/factories/questionsService.js"></script>
   </body>

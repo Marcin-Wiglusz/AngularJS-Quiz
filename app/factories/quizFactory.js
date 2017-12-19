@@ -5,7 +5,7 @@
     .factory('quizFactory', quizFactoryFunc);
 
     // need it for correct answers
-    quizFactoryFunc.$inject = ['questionsService']
+    quizFactoryFunc.$inject = ['questionsService'];
 
     // data from factories can be passed to different controllers as they can't comunnicate between each other
     function quizFactoryFunc(questionsServiceData) {
@@ -41,11 +41,11 @@
 
         quizObject.correctAnswers = questionsServiceData.correctAnswers;
 
-        for (var i = 0; i < questionsServiceData.quizQuestions.lenght; i++) {
-          if (questionsServiceData.quizQuestions[i].selected === questionsServiceData.correctAnswers[i]) {
+        for (var i = 0; i < questionsServiceData.quizQuestions.length; i++) {
+          if (questionsServiceData.quizQuestions[i].selected === quizObject.correctAnswers[i]) {
             //correct answer if above
             questionsServiceData.quizQuestions[i].correct = true;
-            quizObject.sumOfCorrAnswers++
+            quizObject.sumOfCorrAnswers++;
           }
           else {
             questionsServiceData.quizQuestions[i].correct = false;

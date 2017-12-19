@@ -53,15 +53,15 @@
 
 
       this.questionAnswered = function questionAnswered() {
-        var quizLenght = questionsServiceData.quizQuestions.length;
+        var quizLength = questionsServiceData.quizQuestions.length;
 
         if (questionsServiceData.quizQuestions[this.activeQuestion].selected !== null) {
           numberOfAnswers++;
           console.log(numberOfAnswers);
 
-          if (numberOfAnswers >= quizLenght) {
+          if (numberOfAnswers >= quizLength) {
 
-            for (var i = 0; i < quizLenght; i++) {
+            for (var i = 0; i < quizLength; i++) {
               //loop through questions
               if (questionsServiceData.quizQuestions[i].selected === null) {
                 //and if there is any unanswered question, then jump to it
@@ -96,6 +96,9 @@
         quizFactoryData.changeState("quiz", false);
         quizFactoryData.changeState("results", true);
         quizFactoryData.checkAnswers();
+        console.log(quizFactoryData.correctAnswers);
+        console.log(quizFactoryData.sumOfCorrAnswers);
+
       }
 
     }
