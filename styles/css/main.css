@@ -2,7 +2,7 @@
 
 .list-img {
   /*width: 100%;*/
-  height: 150px;
+  height: 250px;
 }
 
 .answer {
@@ -39,4 +39,16 @@
 
 .img-answer.bg-danger {
   border: 3px solid red;
+}
+
+.ruler-list-title {
+  margin-top: 5px;
+}
+
+.details-list-paragraphs {
+  margin-bottom: 5px;
+}
+
+.description {
+  padding: 25px 5px 0 5px;
 }

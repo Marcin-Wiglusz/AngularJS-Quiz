@@ -11,11 +11,13 @@
   <body>
     <!-- any header needed? -->
     <div class = "container">
-      <h3>Mad Rulers Quiz</h3>
+      <h1>Mad Rulers Quiz</h1>
+      <h3>Learn some mad history</h3>
+      <hr />
       <!-- instead of $scope in controller give controller an alias and then use it ('this' is needed to bind variable with controller) -->
 
       <!-- replace ng-hide with redirection to quiz url? -->
-      <!-- quizMetrics, a factory with data available for all controllers -->
+      <!-- quizMetrics, a factory with data available Madfor all controllers -->
       <div
         ng-controller = "listController as list"
         ng-hide = "list.quizFactory.quizActive || list.quizFactory.resultsActive">
@@ -31,7 +33,7 @@
             ng-model = "list.search" />
           <button
             class = "btn btn-warning pull-right "
-            ng-click = "list.activateQuiz()">Start Quiz
+            ng-click = "list.activateQuiz()"><strong>Start Quiz</strong>
           </button>
         </form>
 
@@ -49,17 +51,21 @@
                   <img class = "img-rounded img-responsive list-img" ng-src = "{{ ruler.thumb }}" />
                 </div>
                 <div class = "col-md-6">
-                  <h4>{{ ruler.type }}</h4>
-                  <p><strong>Locations: </strong>{{ruler.locations}}</p>
-                  <p><strong>Size: </strong>{{ruler.size}}</p>
-                  <p><strong>Average Lifespan: </strong>{{ruler.lifespan}}</p>
-                  <p><strong>Diet: </strong>{{ruler.diet}}</p>
+                  <h3 class = "ruler-list-title">{{ ruler.name }}</h3>
+                  <p class = "details-list-paragraphs"><strong>Title</strong></p>
+                  <p class = "details-list-paragraphs">{{ruler.title}}</p>
+                  <p class = "details-list-paragraphs"><strong>Lived</strong></p>
+                  <p class = "details-list-paragraphs">{{ruler.lived}}</p>
+                  <p class = "details-list-paragraphs"><strong>Reign</strong></p>
+                  <p class = "details-list-paragraphs">{{ruler.reign}}</p>
+                  <p class = "details-list-paragraphs"><strong>Died</strong></p>
+                  <p class = "details-list-paragraphs">{{ruler.died}}</p>
                   <!-- bootstrap modal for pop up info (data attr)-->
                   <button
-                    class = "btn btn-primary pull-right"
+                    class = "btn btn-primary pull-right pull-down"
                     data-toggle = "modal"
                     data-target = "#ruler-info"
-                    ng-click = "list.toggleRulerInfo(ruler)">More Info
+                    ng-click = "list.toggleRulerInfo(ruler)"><strong>More Info</strong>
                   </button>
                 </div>
               </div>
@@ -73,7 +79,7 @@
             <div class = "modal-dialog">
               <div class = "modal-content">
                 <div class = "modal-header">
-                  <h2>{{ list.activeRuler.type }}</h2>
+                  <h2>{{ list.activeRuler.name }}</h2>
                 </div>
                 <div class = "modal-body">
                   <div class = "row">
@@ -84,14 +90,14 @@
                     </div>
                   </div>
                   <div class = "row">
-                    <div class = "col-md-6">
-                      <p><strong>Locations: </strong>{{list.activeRuler.locations}}</p>
-                      <p><strong>Size: </strong>{{list.activeRuler.size}}</p>
-                      <p><strong>Average Lifespan: </strong>{{list.activeRuler.lifespan}}</p>
-                      <p><strong>Diet: </strong>{{list.activeRuler.diet}}</p>
-                    </div>
+                    <!-- <div class = "col-md-6">
+                      <p><strong>Title: </strong>{{list.activeRuler.title}}</p>
+                      <p><strong>Lived: </strong>{{list.activeRuler.lived}}</p>
+                      <p><strong>Reign: </strong>{{list.activeRuler.reign}}</p>
+                      <p><strong>Died: </strong>{{list.activeRuler.died}}</p>
+                    </div> -->
                     <div class = "col-xs-12">
-                      <p>{{ list.activeRuler.description }}</p>
+                      <p class = "description">{{ list.activeRuler.description }}</p>
                       <button
                         class = "btn btn-danger pull-right"
                         data-dismiss = "modal">Close</button>
@@ -287,7 +293,7 @@
           <div class = "col-xs-12">
             <h2>You've scored {{results.quizFactory.sumOfCorrAnswers}} / {{results.questionsService.quizQuestions.length}}</h2>
             <!-- filter result up to 2 places -->
-            <h2><strong>{{results.endScorePerc() | number:2}}%</strong></h2>
+            <h2><strong>{{results.endScorePerc() | number:0}}%</strong></h2>
           </div>
         </div>
 

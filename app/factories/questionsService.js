@@ -15,24 +15,24 @@
     }
 
     //need to get that to quizQuestions
-    var correctAnswers = [1, 2, 3, 0, 2, 0, 3, 2, 0, 3];
+    var correctAnswers = [2, 2, 1, 1, 3, 3, 1];
 
     var quizQuestions  = [
         {
             type: "text",
-            text: "How much can a loggerhead weigh?",
+            text: "Incitatus was a(n)?",
             possibilities: [
                 {
-                    answer: "Up to 20kg"
+                    answer: "Roman Emperor"
                 },
                 {
-                    answer: "Up to 115kg"
+                    answer: "Assassin send to kill Chineese Emperor Qin Shi Huang"
                 },
                 {
-                    answer: "Up to 220kg"
+                    answer: "Horse priest"
                 },
                 {
-                    answer: "Up to 500kg"
+                    answer: "Very poisonous herb used in Middle East"
                 }
             ],
             //holds index of selected answer
@@ -42,19 +42,19 @@
         },
         {
             type: "text",
-            text: "What is the typical lifespan of a Green Sea Turtle?",
+            text: "Which ruler was known of his foundness in obese women?",
             possibilities: [
                 {
-                    answer: "150 years"
+                    answer: "Ferdinand I of Austria"
                 },
                 {
-                    answer: "10 years"
+                    answer: "Caligula"
                 },
                 {
-                    answer: "80 years"
+                    answer: "Ibrahim I of Ottoman Empire"
                 },
                 {
-                    answer: "40 years"
+                    answer: "Catherine the Great, Empress of Russia"
                 }
             ],
             selected: null,
@@ -62,39 +62,19 @@
         },
         {
             type: "image",
-            text: "Which of these is the Alligator Snapping Turtle?",
+            text: "Which of below cities was briefly known as Colonia Lucia Annia Commodiana?",
             possibilities: [
                 {
-                    answer: "https://c1.staticflickr.com/3/2182/2399413165_bcc8031cac_z.jpg?zz=1"
+                    answer: "https://upload.wikimedia.org/wikipedia/commons/8/8a/The_Cathedral_and_the_Leaning_Tower_in_Pisa.jpg"
                 },
                 {
-                    answer: "http://images.nationalgeographic.com/wpf/media-live/photos/000/006/cache/ridley-sea-turtle_688_600x450.jpg"
+                    answer: "https://upload.wikimedia.org/wikipedia/commons/d/d3/View_from_Palatine_Hill_2011_6.jpg"
                 },
                 {
-                    answer: "https://static-secure.guim.co.uk/sys-images/Guardian/Pix/pictures/2011/8/13/1313246505515/Leatherback-turtle-007.jpg"
+                    answer: "https://upload.wikimedia.org/wikipedia/commons/5/5f/%CE%97_%CE%91%CE%BA%CF%81%CF%8C%CF%80%CE%BF%CE%BB%CE%B7_%CE%B1%CF%80%CF%8C_%CF%84%CE%B7%CE%BD_%CE%A0%CE%BD%CF%8D%CE%BA%CE%B1.jpg"
                 },
                 {
-                    answer: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Alligator_snapping_turtle_-_Geierschildkr%C3%B6te_-_Alligatorschildkr%C3%B6te_-_Macrochelys_temminckii_01.jpg"
-                }
-            ],
-            selected: null,
-            correct: null
-        },
-        {
-            type: "image",
-            text: "Which of these is the Green Turtle?",
-            possibilities: [
-                {
-                    answer: "http://www.what-do-turtles-eat.com/wp-content/uploads/2014/10/Sea-Turtles-Habitat.jpg"
-                },
-                {
-                    answer: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Kemp's_Ridley_sea_turtle_nesting.JPG"
-                },
-                {
-                    answer: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Alligator_snapping_turtle_-_Geierschildkr%C3%B6te_-_Alligatorschildkr%C3%B6te_-_Macrochelys_temminckii_01.jpg"
-                },
-                {
-                    answer: "http://assets.worldwildlife.org/photos/163/images/carousel_small/SCR_290360hawskbill-why-matter-LG.jpg?1345565532"
+                    answer: "https://upload.wikimedia.org/wikipedia/commons/6/60/London-TowerBridge-1900-Closed.jpg"
                 }
             ],
             selected: null,
@@ -102,19 +82,19 @@
         },
         {
             type: "text",
-            text: "Where does the Kemp's Ridley Sea Turtle live?'",
+            text: "Which ruler couldn't resist Knödels?",
             possibilities: [
                 {
-                    answer: "Tropical waters all around the world"
+                    answer: "Charles VI the Beloved, King of France"
                 },
                 {
-                    answer: "Eastern Australia"
+                    answer: "Ferdinand I of Austria"
                 },
                 {
-                    answer: "Coastal North Atlantic"
+                    answer: "Gottfried von Hohenlohe, Hochmeister of Teutonic Order"
                 },
                 {
-                    answer: "South pacific islands"
+                    answer: "Commodus"
                 }
             ],
             selected: null,
@@ -122,19 +102,19 @@
         },
         {
             type: "text",
-            text: "What is the most common turtle in US waters?",
+            text: "Which ruler didn't die of natural cause?",
             possibilities: [
                 {
-                    answer: "Loggerhead turtle"
+                    answer: "Qin Shi Huang, Emperor of China"
                 },
                 {
-                    answer: "Leatherback turtle"
+                    answer: "Caligula"
                 },
                 {
-                    answer: "Hawksbill Turtle"
+                    answer: "Tsar Nicholas II of Russia"
                 },
                 {
-                    answer: "Alligator Snapping Turtle"
+                    answer: "All of them"
                 }
             ],
             selected: null,
@@ -142,39 +122,19 @@
         },
         {
             type: "text",
-            text: "What is the largest sea turtle on earth?",
+            text: "'The First Emperor will die and his land will be divided'. These words were scribed on the meteor and concerned",
             possibilities: [
                 {
-                    answer: "Eastern Snake Necked Turtle"
+                    answer: "Commodus of Roman Empire"
                 },
                 {
-                    answer: "Olive Ridley Sea Turtle"
+                    answer: "Montezuma I of Aztec Empire"
                 },
                 {
-                    answer: "Kemp's Ridley Sea Turtle'"
+                    answer: "Ibrahim I of Ottoman Empire"
                 },
                 {
-                    answer: "Leatherback"
-                }
-            ],
-            selected: null,
-            correct: null
-        },
-        {
-            type: "image",
-            text: "Which of these is the Olive Ridley Turtle?",
-            possibilities: [
-                {
-                    answer: "http://i.telegraph.co.uk/multimedia/archive/02651/loggerheadTurtle_2651448b.jpg"
-                },
-                {
-                    answer: "http://assets.worldwildlife.org/photos/163/images/carousel_small/SCR_290360hawskbill-why-matter-LG.jpg?1345565532"
-                },
-                {
-                    answer: "http://images.nationalgeographic.com/wpf/media-live/photos/000/006/cache/ridley-sea-turtle_688_600x450.jpg"
-                },
-                {
-                    answer: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Kemp's_Ridley_sea_turtle_nesting.JPG"
+                    answer: "Qin Shi Huang of China Empire"
                 }
             ],
             selected: null,
@@ -182,39 +142,19 @@
         },
         {
             type: "text",
-            text: "How Heavy can a leatherback turtle be?",
+            text: "Lydia was an ancient kingdom located in western Asia Minor. It's capital city was Sardis. Which ruler thought he was made of glass?",
             possibilities: [
                 {
-                    answer: "900kg"
+                    answer: "Ferdinand I of Austria"
                 },
                 {
-                    answer: "40kg"
+                    answer: "Charles VI the Beloved"
                 },
                 {
-                    answer: "110kg"
+                    answer: "Caligula"
                 },
                 {
-                    answer: "300kg"
-                }
-            ],
-            selected: null,
-            correct: null
-        },
-        {
-            type: "text",
-            text: "Which of these turtles are herbivores?",
-            possibilities: [
-                {
-                    answer: "Loggerhead Turtle"
-                },
-                {
-                    answer: "Hawksbill Turtle"
-                },
-                {
-                    answer: "Leatherback Turtle"
-                },
-                {
-                    answer: "Green Turtle"
+                    answer: "Louis XV of France"
                 }
             ],
             selected: null,
@@ -224,76 +164,58 @@
 
     var quizData = [
         {
-            type: "Green Turtle",
-            thumb: "http://www.what-do-turtles-eat.com/wp-content/uploads/2014/10/Sea-Turtles-Habitat.jpg",
-            locations: "Tropical and subtropical oceans worldwide",
-            size: "Up to 1.5m and up to 300kg",
-            lifespan: "Over 80 years",
-            diet: "Herbivore",
-            description: "The green turtle is a large, weighty sea turtle with a wide, smooth carapace, or shell. It inhabits tropical and subtropical coastal waters around the world and has been observed clambering onto land to sunbathe. It is named not for the color of its shell, which is normally brown or olive depending on its habitat, but for the greenish color of its skin. There are two types of green turtles—scientists are currently debating whether they are subspecies or separate species—including the Atlantic green turtle, normally found off the shores of Europe and North America, and the Eastern Pacific green turtle, which has been found in coastal waters from Alaska to Chile."
+            name: "Caligula",
+            thumb: "https://upload.wikimedia.org/wikipedia/commons/3/35/Gaius_Caesar_Caligula.jpg",
+            title: "Emperor of the Roman Empire",
+            lived: "31 August AD 12 – 24 January AD 41",
+            reign: "18 March AD 37 – 24 January AD 41",
+            died: "Assassinated by officers of the Praetorian Guard",
+            description: "Philo of Alexandria and Seneca the Younger describe Caligula as an insane emperor who was self-absorbed, angry, killed on a whim, and indulged in too much spending and sex. He is accused of sleeping with other men's wives and bragging about it, killing for mere amusement, deliberately wasting money on his bridge, causing starvation, and wanting a statue of himself erected in the Temple of Jerusalem for his worship. Once, at some games at which he was presiding, he ordered his guards to throw an entire section of the audience into the arena during the intermission to be eaten by the wild beasts because there were no prisoners to be used and he was bored. While repeating the earlier stories, the later sources of Suetonius and Cassius Dio provide additional tales of insanity. They accuse Caligula of incest with his sisters, Agrippina the Younger, Drusilla, and Livilla, and say he prostituted them to other men. They state he sent troops on illogical military exercises, turned the palace into a brothel, and, most famously, planned or promised to make his horse, Incitatus, a consul, and actually appointed him a priest. Caligula's actions as emperor were described as being especially harsh to the senate, to the nobility and to the equestrian order. According to Josephus, these actions led to several failed conspiracies against Caligula. Eventually, officers within the Praetorian Guard led by Cassius Chaerea succeeded in murdering the emperor."
         },
         {
-            type: "Loggerhead Turtle",
-            thumb: "http://i.telegraph.co.uk/multimedia/archive/02651/loggerheadTurtle_2651448b.jpg",
-            locations: "Tropical and subtropical oceans worldwide",
-            size: "90cm, 115kg",
-            lifespan: "More than 50 years",
-            diet: "Carnivore",
-            description: "Loggerhead turtles are the most abundant of all the marine turtle species in U.S. waters. But persistent population declines due to pollution, shrimp trawling, and development in their nesting areas, among other factors, have kept this wide-ranging seagoer on the threatened species list since 1978. Their enormous range encompasses all but the most frigid waters of the world's oceans. They seem to prefer coastal habitats, but often frequent inland water bodies and will travel hundreds of miles out to sea."
+            name: "Commodus",
+            thumb: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Commodus_Musei_Capitolini_MC1120.jpg",
+            title: "Emperor of the Roman Empire",
+            lived: "31 August 161 AD– 31 December 192 AD",
+            reign: "177 – 31 December 192",
+            died: "Strangled during his bath",
+            description: "Commodus had always laid stress on his unique status as a source of god-like power. Innumerable statues around the empire were set up portraying him in the guise of Hercules, reinforcing the image of him as a demigod, a physical giant, a protector and a battler against beasts and men. Moreover, as Hercules, he could claim to be the son of Jupiter, the representative of the supreme god of the Roman pantheon. Early in 192 after city of Rome was extensively damaged by a fire that raged for several days, Commodus declaring himself the new Romulus, ritually re-founded Rome, renaming the city Colonia Lucia Annia Commodiana. All the months of the year were renamed to correspond exactly with his (now twelve) names: Lucius, Aelius, Aurelius, Commodus, Augustus, Herculeus, Romanus, Exsuperatorius, Amazonius, Invictus, Felix, Pius. The legions were renamed Commodianae, the fleet which imported grain from Africa was termed Alexandria Commodiana Togata, the Senate was entitled the Commodian Fortunate Senate, his palace and the Roman people themselves were all given the name Commodianus. On 31 December his mistress Marcia, poisoned his food but he vomited up the poison. Conspirators then sent his wrestling partner Narcissus to strangle him in his bath."
         },
         {
-            type: "Leatherback Turtle",
-            thumb: "https://static-secure.guim.co.uk/sys-images/Guardian/Pix/pictures/2011/8/13/1313246505515/Leatherback-turtle-007.jpg",
-            locations: "All tropical and subtropical oceans",
-            size: "Up to 2m, up to 900kg",
-            lifespan: "45 years",
-            diet: "Carnivore",
-            description: "Leatherbacks are the largest turtles on Earth, growing up to seven feet (two meters) long and exceeding 2,000 pounds (900 kilograms). These reptilian relics are the only remaining representatives of a family of turtles that traces its evolutionary roots back more than 100 million years. Once prevalent in every ocean except the Arctic and Antarctic, the leatherback population is rapidly declining in many parts of the world. While all other sea turtles have hard, bony shells, the inky-blue carapace of the leatherback is somewhat flexible and almost rubbery to the touch. Ridges along the carapace help give it a more hydrodynamic structure. Leatherbacks can dive to depths of 4,200 feet (1,280 meters)—deeper than any other turtle—and can stay down for up to 85 minutes."
+            name: "Charles VI the Beloved",
+            thumb: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Charles_VI_de_France_-_Dialogues_de_Pierre_Salmon_-_Bib_de_Gen%C3%A8ve_MsFr165f4.jpg",
+            title: "King of France",
+            lived: "3 December 1368 – 21 October 1422",
+            reign: "16 September 1380 – 21 October 1422",
+            died: "Of natural causes",
+            description: "In 1388 Charles VI dismissed his uncles and brought back to power his father's former advisers, known as the Marmousets. Political and economic conditions in the kingdom improved significantly, and Charles earned the epithet 'the Beloved'. But in August 1392 en route to Brittany with his army in the forest of Le Mans, Charles suddenly went mad and slew four knights and almost killed his brother, Louis of Orléans. From then on, Charles' bouts of insanity became more frequent and of longer duration. During these attacks, he had delusions, believing he was made of glass what caused him to protect himself in various ways so that he would not break. He reportedly had iron rods sewn in his clothes, so that he would not shatter if he came into contact with another person. He could also attack servants or run until exhaustion, wailing that he was threatened by his enemies. Mental illness may have been passed on for several generations through his mother, Joanna of Bourbon. Although still called by his subjects Charles the Beloved, he became known also as Charles the Mad from then on."
         },
         {
-            type: "Hawksbill Sea Turtle",
-            thumb: "http://assets.worldwildlife.org/photos/163/images/carousel_small/SCR_290360hawskbill-why-matter-LG.jpg?1345565532",
-            locations: "Tropical Coastal areas around the world",
-            size: "Over 1m, 45-68kg",
-            lifespan: "30-50 Years",
-            diet: "Carnivore",
-            description: "Dolor possimus voluptas hic aliquam rem doloremque minus maiores accusantium? Laborum perferendis harum blanditiis quod quia? Aspernatur sunt et fuga delectus ab rem excepturi. Ipsa quibusdam facere consequuntur magnam vitae? Consectetur consectetur necessitatibus beatae delectus quibusdam in! Est nobis omnis iusto illum fugiat maxime! Neque fugiat reiciendis sequi corrupti minima facere distinctio aliquam est voluptatibus. Sint incidunt soluta atque ducimus."
+            name: "Ibrahim I",
+            thumb: "https://upload.wikimedia.org/wikipedia/commons/1/13/Ibrahim_I.jpg",
+            title: "Ottoman Sultan",
+            lived: "5 November 1615 – 18 August 1648",
+            reign: "9 February 1640 – 8 August 1648",
+            died: "Executed after a revolt",
+            description: "Ibrahim was often distracted by recurring headaches and attacks of physical weakness, perhaps caused by the trauma of his early years. Since he was the only surviving male member of the Ottoman dynasty, Ibrahim was encouraged by his mother Kösem Sultan to distract himself with harem girls. Ibrahim brought the empire almost to collapse in a very short space of time. He is known to have had an obsession with obese women, urging his agents to find the fattest woman possible. A candidate was tracked down in Georgia, or Armenia, who weighed over 330 pounds, and was given the pet name Sheker Pare (literally, “piece of sugar”). Ibrahim was so pleased with her that he gave her a government pension, and the title of Governor General of Damascus. When he heard a rumor that his concubines were compromised by another man, he had 280 members of his harem drowned in the Bosporus Sea."
         },
         {
-            type: "Alligator Snapping Turtle",
-            thumb: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Alligator_snapping_turtle_-_Geierschildkr%C3%B6te_-_Alligatorschildkr%C3%B6te_-_Macrochelys_temminckii_01.jpg",
-            locations: "Along the Atlantic Coast of USA",
-            size: "around 60cm, up to 100kg",
-            lifespan: "20-70 years",
-            diet: "Carnivore",
-            description: "The prehistoric-looking alligator snapping turtle is the largest freshwater turtle in North America and among the largest in the world. With its spiked shell, beaklike jaws, and thick, scaled tail, this species is often referred to as the 'dinosaur of the turtle world.' Found almost exclusively in the rivers, canals, and lakes of the southeastern United States, alligator snappers can live to be 50 to 100 years old. Males average 26 inches (66 centimeters) in shell length and weigh about 175 pounds (80 kilograms), although they have been known to exceed 220 pounds (100 kilograms). The much smaller females top out at around 50 pounds (23 kilograms)."
+            name: "Ferdinand I of Austria",
+            thumb: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Ferdinand_I%3B_Keizer_van_Oostenrijk.jpg",
+            title: "Emperor of Austria, King of Hungary, Bohemia, Dalmatia, and Croatia",
+            lived: "19 April 1793 – 29 June 1875",
+            reign: "2 March 1835 – 2 December 1848",
+            died: "Of natural causes",
+            description: "Possibly as a result of his parents' genetic closeness (they were double first cousins), Ferdinand suffered from epilepsy, hydrocephalus, neurological problems, and a speech impediment. Ferdinand has been depicted as feeble-minded and incapable of ruling, but although he had epilepsy, he kept a coherent and legible diary and has even been said to have had a sharp wit, but having as many as twenty seizures per day severely restricted his ability to rule with any effectiveness. When Ferdinand married Princess Maria Anna of Savoy, the court physician considered it unlikely that he would be able to consummate the marriage. When he tried to consummate the marriage, he had five seizures. He is best remembered for his command to his cook: when told he could not have apricot dumplings (Marillenknödel) because apricots were out of season, he said 'I am the Emperor, and I want dumplings!' - (Ich bin der Kaiser und ich will Knödel!)"
         },
         {
-            type: "Kemp's Ridley Sea Turtle",
-            thumb: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Kemp's_Ridley_sea_turtle_nesting.JPG",
-            locations: "Coastal areas of the North Atlantic",
-            size: "65cm, up to 45kg",
-            lifespan: "Around 50 years",
-            diet: "Omnivore",
-            description: "The Kemp’s ridley turtle is the world’s most endangered sea turtle, and with a worldwide female nesting population roughly estimated at just 1,000 individuals, its survival truly hangs in the balance. Their perilous situation is attributed primarily to the over-harvesting of their eggs during the last century. And though their nesting grounds are protected and many commercial fishing fleets now use turtle excluder devices in their nets, these turtles have not been able to rebound. For this reason, their nesting processions, called arribadas, make for especially high drama. During an arribada, females take over entire portions of beaches, lugging their big bodies through the sand with their flippers until they find a satisfying spot to lay their eggs. Even more riveting is the later struggle to the ocean of each tiny, vulnerable hatchling. Beset by predators, hatchlings make this journey at night, breaking out of their shells using their caruncle, a single temporary tooth grown just for this purpose."
-        },
-        {
-            type: "Olive Ridley Turtle",
-            thumb: "http://images.nationalgeographic.com/wpf/media-live/photos/000/006/cache/ridley-sea-turtle_688_600x450.jpg",
-            locations: "Tropical coastal areas around the world",
-            size: "70cm, 45kg",
-            lifespan: "50 years",
-            diet: "Omnivore",
-            description: "The olive ridley turtle is named for the generally greenish color of its skin and shell, or carapace. It is closely related to the Kemp’s ridley, with the primary distinction being that olive ridleys are found only in warmer waters, including the southern Atlantic, Pacific and Indian Oceans. Olive and Kemp’s ridleys are the smallest of the sea turtles, weighing up to 100 pounds (45 kilograms) and reaching only about 2 feet (65 centimeters) in shell length. The olive ridley has a slightly smaller head and smaller shell than the Kemp’s."
-        },
-        {
-            type: "Eastern Snake Necked Turtle",
-            thumb: "https://c1.staticflickr.com/3/2182/2399413165_bcc8031cac_z.jpg?zz=1",
-            locations: "Eastern Australia",
-            size: "Up to 30cm",
-            lifespan: "25 years",
-            diet: "Carnivore",
-            description: "Snake-necked turtles, as the name suggests, have an unusually long neck. Their necks may be up to 60 percent of their carapace length. Their carapace is oval and flattened, usually dark-brown to black measuring up to 11 inches (27.5 cm) in length. Scutes are shed as the animals grow. The males have a longer, thicker tail than females and a concave plastron. They are excellent swimmers; they have large, webbed feet with sharp claws used to tear apart food."
+            name: "Qin Shi Huang",
+            thumb: "https://upload.wikimedia.org/wikipedia/commons/2/27/Qinshihuang.jpg",
+            title: "Emperor of China",
+            lived: "18 February 259 BC – 10 September 210 BC",
+            reign: "220 BC – 10 September 210 BC",
+            died: "Of alchemical elixir poisoning",
+            description: "Known for being terrified of being assassinated (he survived three attempts) he never slept in the same place twice. Qin Shi Huang feared death and desperately sought the fabled elixir of life, which would supposedly allow him to live forever. He was obsessed with acquiring immortality and fell prey to many who offered him supposed elixirs. In one case he sent Xu Fu, a Zhifu islander, with ships carrying hundreds of young men and women in search of the mystical Penglai mountain. They were sent to find Anqi Sheng, a 1,000-year-old magician whom Qin Shi Huang had supposedly met in his travels and who had invited him to seek him there. These people never returned, perhaps because they knew that if they returned without the promised elixir, they would surely be executed. In 211 BC a large meteor is said to have fallen in Dōngjùn in the lower reaches of the Yellow River. On it, an unknown person inscribed the words 'The First Emperor will die and his land will be divided'. When the emperor heard of this, he sent an imperial secretary to investigate this prophecy. No one would confess to the deed, so all the people living nearby were put to death. The stone was then burned and pulverized. Qin Shi Huang was said to have died by drinking mercury, believing it to be an elixir of immortality."
         }
     ];
 
