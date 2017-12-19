@@ -82,7 +82,7 @@
         },
         {
             type: "text",
-            text: "Which ruler couldn't resist Knödels?",
+            text: "Which ruler couldn't resist Knödels(dumplings)?",
             possibilities: [
                 {
                     answer: "Charles VI the Beloved, King of France"
@@ -122,7 +122,7 @@
         },
         {
             type: "text",
-            text: "'The First Emperor will die and his land will be divided'. These words were scribed on the meteor and concerned",
+            text: "'The First Emperor will die and his land will be divided'. These words were scribed on the meteor which strucked earth at the end of 3rd century BC and concerned",
             possibilities: [
                 {
                     answer: "Commodus of Roman Empire"
